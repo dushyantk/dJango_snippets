@@ -9,7 +9,7 @@ DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 # Secret key is random and thus secure
 SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
 
-# Take care of this during deployment
+# TODO Take care of this during deployment
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 
 settings.configure(
