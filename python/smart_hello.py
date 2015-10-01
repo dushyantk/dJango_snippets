@@ -7,7 +7,7 @@ from django.conf import settings
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
 
 # Secret key is random and thus secure
-SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(32))
+SECRET_KEY = os.environ.get('SECRET_KEY', '{{ secret_key }}')
 
 # TODO Take care of this during deployment
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
@@ -41,4 +41,4 @@ application = get_wsgi_application()
 if __name__ == "__main__":
     from django.core.management import execute_from_command_line
 
-execute_from_command_line(sys.argv)
+    execute_from_command_line(sys.argv)
